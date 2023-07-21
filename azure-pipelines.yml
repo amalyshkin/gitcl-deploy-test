@@ -1,0 +1,37 @@
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+stages:
+- stage: Build
+  displayName: Build stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: windows-latest
+    steps:
+    - script: echo Hello, world!
+
+- stage: Deploy
+  displayName: Deploy stage
+  dependsOn: Build
+  jobs:
+  # Track deployments on the environment.
+  - deployment: DeployWeb
+    displayName: deploy Web App
+    pool:
+      vmImage: windows-latest
+    # Creates an environment if it doesn't exist.
+    environment:
+      name: staging
+    strategy:
+      # Default deployment strategy, more coming...
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self 
+          - script: echo my first deployment
+
