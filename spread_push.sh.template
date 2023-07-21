@@ -1,0 +1,32 @@
+#!/bin/bash
+# ISS Art bash template v.1.3
+# set -o xtrace # turn on debugging
+# dd="echo ---" # turn on displaying debug output
+set -uo pipefail #e
+[ -e "$(dirname "${0}")/isslib.sh" ] && . "$(dirname "${0}")/isslib.sh" || . isslib.sh
+#---=== Variables section ===---
+#VAR='val' # description
+#---=== x ===---
+#${dd} : "debug output string"
+
+./push_all_to_remote.sh GH "https://<user>:<pat>@github.com/<user>/<repository>.git"
+
+./push_all_to_remote.sh GHE "https://<user>:<pat>@testgithubforjenkins.gktest.net/<user>/<repository>.git"
+
+./push_all_to_remote.sh GL "https://<user>:<pat>@gitlab.com/<user>/<repository>.git"
+
+./push_all_to_remote.sh GLS "http://<user>:<pat>@testgitlabv4.gktest.net/<user>/<repository>.git"
+
+./push_all_to_remote.sh ADOR "https://<organization>:<git_credentials_password>@dev.azure.com/<organization>/<project>/_git/<repository>"
+
+# alas, credentials cannot be passed in the repository URL
+./push_all_to_remote.sh ADOS2019 "https://azuredevops2019.gktest.net/DefaultCollection/<project>/_git/<repository>"
+
+# alas, credentials cannot be passed in the repository URL
+./push_all_to_remote.sh ADOS2020 "https://azuredevops2020.gktest.net/DefaultCollection/<project>/_git/<repository>"
+
+./push_all_to_remote.sh BB "https://<user>:<app_password>@bitbucket.org/<user>/<repository>.git"
+
+./push_all_to_remote.sh AWSCC "https://<codecommit_credentials_user>:<codecommit_credentials_password>@git-codecommit.<reqion>.amazonaws.com/v1/repos/<repository>"
+
+./push_all_to_remote.sh Gerrit "http://<user>:<password>@testgerrit.gktest.net:8080/a/<repository>"
