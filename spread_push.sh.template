@@ -11,7 +11,7 @@ set -uo pipefail #e
 
 ./push_all_to_remote.sh GH "https://<user>:<pat>@github.com/<user>/<repository>.git"
 
-./push_all_to_remote.sh GHE "https://<user>:<pat>@testgithubforjenkins.gktest.net/<user>/<repository>.git"
+./push_all_to_remote.sh GHE "https://<user>:<pat>@testgithubforjenkins.gktest.net/<organization>/<repository>.git"
 
 ./push_all_to_remote.sh GL "https://<user>:<pat>@gitlab.com/<user>/<repository>.git"
 
@@ -24,6 +24,9 @@ set -uo pipefail #e
 
 # alas, credentials cannot be passed in the repository URL
 ./push_all_to_remote.sh ADOS2020 "https://azuredevops2020.gktest.net/DefaultCollection/<project>/_git/<repository>"
+
+#? alas, credentials cannot be passed in the repository URL
+#?./push_all_to_remote.sh ADOS2022 "https://azuredevops2020.gktest.net/DefaultCollection/<project>/_git/<repository>"
 
 ./push_all_to_remote.sh BB "https://<user>:<app_password>@bitbucket.org/<user>/<repository>.git"
 
