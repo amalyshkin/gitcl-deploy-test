@@ -25,8 +25,8 @@ set -uo pipefail #e
 # alas, credentials cannot be passed in the repository URL
 ./push_all_to_remote.sh ADOS2020 "https://azuredevops2020.gktest.net/DefaultCollection/<project>/_git/<repository>"
 
-#? alas, credentials cannot be passed in the repository URL
-#?./push_all_to_remote.sh ADOS2022 "https://azuredevops2020.gktest.net/DefaultCollection/<project>/_git/<repository>"
+# alas, credentials cannot be passed in the repository URL
+./push_all_to_remote.sh ADOS2022 "https://azuredevops2022.gktest.net/DefaultCollection/<project>/_git/<repository>"
 
 ./push_all_to_remote.sh BB "https://<user>:<app_password>@bitbucket.org/<user>/<repository>.git"
 
