@@ -13,6 +13,7 @@ if [ -z "${1}" ]; then
   exitMsg "Usage: ${0} remote_name remote_url"
 fi
 
+msg "Push to ${1}"
 set -o xtrace
 git remote add ${1} ${2}
 git push --force ${1} "master"
