@@ -5,7 +5,7 @@
 set -euo pipefail
 [ -e "$(dirname "${0}")/isslib.sh" ] && . "$(dirname "${0}")/isslib.sh" || . isslib.sh
 #---=== Variables section ===---
-regionNames=("n/a" "n/a" "us-east-1" "us-east-2" "eu-west-1-ireland" "eu-central-1-frankfurt" "ap-southeast-2-sydney")
+regionNames=("n/a" "n/a" "us-east-1" "us-east-2" "eu-west-1-ireland" "eu-central-1-frankfurt" "ap-southeast-2-sydney" "ap-southeast-1-singapore")
 regionsLimit=$(( ${#regionNames[@]} - 1 ))
 #---=== x ===---
 #${dd} : "debug output string"
